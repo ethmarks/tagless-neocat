@@ -437,9 +437,13 @@ function buildGrid(text) {
  * @returns {string}
  */
 export function textToNeocat(text) {
-	return buildGrid(text)
-		.map((row) => row.map(tile).join(""))
-		.join("\n");
+	const lines = text.split("\n");
+
+	const emojiLines = lines.map((line) =>
+		buildGrid(line).map((row) => row.map(tile).join("")),
+	);
+
+	return emojiLines.flat().join("\n");
 }
 
 const emojiImgPath = (name) => `./emoji/${name}.png`;
@@ -460,6 +464,8 @@ export function neocatToEl(emoji) {
 		for (const name of names) {
 			const img = document.createElement("img");
 			img.src = emojiImgPath(name);
+			img.alt = name;
+			img.title = `:${name}:`;
 
 			rowEl.appendChild(img);
 		}
