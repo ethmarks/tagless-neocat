@@ -1,0 +1,339 @@
+{
+	"READTHIS": {
+		"explanation": "because json doesn't allow comments for some dumb reason",
+		"source": "https://github.com/maxwofford/neocat/blob/main/font.go",
+		"note": "the original file is a Go map, but I ported it to a JSON object, which was more tedious than you'd think"
+	},
+	"mapping": {
+		"b": "actually-nothing",
+		"down": "neocat_stretch_down",
+		"ul": "neocat_stretch_ul",
+		"dr": "neocat_stretch_dr",
+		"dl": "neocat_stretch_dl",
+		"up": "neocat_stretch_up",
+		"ur": "neocat_stretch_ur",
+		"rt": "neocat_stretch_right",
+		"lt": "neocat_stretch_left",
+		"sv": "neocat_stretch_v",
+		"sh": "neocat_stretch_h",
+		"t3t": "neocat_stretch_3way_top_fixed",
+		"t3b": "neocat_stretch_3way_bottom_fixed",
+		"t3l": "neocat_stretch_3way_left_fixed",
+		"t3r": "neocat_stretch_3way_right_fixed",
+		"x4": "neocat_stretch_4way",
+		"face": "neocat"
+	},
+	"font": {
+		"a": [
+			["b", "b", "b"],
+			["down", "sh", "ul"],
+			["t3r", "sh", "t3l"],
+			["up", "b", "up"],
+			["b", "b", "b"]
+		],
+
+		"b": [
+			["down", "b", "b"],
+			["sv", "b", "b"],
+			["t3r", "sh", "ul"],
+			["sv", "b", "sv"],
+			["dr", "sh", "dl"]
+		],
+
+		"c": [
+			["b", "b", "b"],
+			["down", "sh", "lt"],
+			["sv", "b", "b"],
+			["dr", "sh", "lt"],
+			["b", "b", "b"]
+		],
+
+		"d": [
+			["b", "b", "down"],
+			["b", "b", "sv"],
+			["down", "sh", "t3l"],
+			["sv", "b", "sv"],
+			["dr", "sh", "dl"]
+		],
+
+		"e": [
+			["b", "b", "b"],
+			["down", "sh", "ul"],
+			["t3r", "sh", "dl"],
+			["dr", "sh", "lt"],
+			["b", "b", "b"]
+		],
+
+		"f": [
+			["b", "down", "lt"],
+			["rt", "x4", "lt"],
+			["b", "sv", "b"],
+			["b", "up", "b"],
+			["b", "b", "b"]
+		],
+
+		"g": [
+			["b", "b", "b"],
+			["down", "sh", "ul"],
+			["sv", "b", "sv"],
+			["dr", "sh", "t3l"],
+			["rt", "sh", "dl"]
+		],
+
+		"h": [
+			["down", "b", "b"],
+			["sv", "b", "b"],
+			["t3r", "sh", "ul"],
+			["sv", "b", "sv"],
+			["up", "b", "up"]
+		],
+
+		"i": [["face"], ["b"], ["down"], ["sv"], ["up"]],
+
+		"j": [
+			["b", "face"],
+			["b", "b"],
+			["b", "down"],
+			["down", "sv"],
+			["dr", "dl"]
+		],
+
+		"k": [
+			["down", "b", "b"],
+			["sv", "b", "down"],
+			["t3r", "t3b", "dl"],
+			["sv", "dr", "ul"],
+			["up", "b", "up"]
+		],
+
+		"l": [["down"], ["sv"], ["sv"], ["sv"], ["up"]],
+
+		"m": [
+			["b", "b", "b", "b", "b"],
+			["down", "sh", "t3b", "sh", "ul"],
+			["sv", "b", "sv", "b", "sv"],
+			["sv", "b", "sv", "b", "sv"],
+			["up", "b", "up", "b", "up"]
+		],
+
+		"n": [
+			["b", "b", "b"],
+			["down", "sh", "ul"],
+			["sv", "b", "sv"],
+			["sv", "b", "sv"],
+			["up", "b", "up"]
+		],
+
+		"o": [
+			["b", "b", "b"],
+			["down", "sh", "ul"],
+			["sv", "b", "sv"],
+			["dr", "sh", "dl"],
+			["b", "b", "b"]
+		],
+
+		"p": [
+			["b", "b", "b"],
+			["down", "sh", "ul"],
+			["sv", "b", "sv"],
+			["t3r", "sh", "dl"],
+			["up", "b", "b"]
+		],
+
+		"q": [
+			["b", "b", "b"],
+			["down", "sh", "ul"],
+			["sv", "b", "sv"],
+			["dr", "sh", "t3l"],
+			["b", "b", "up"]
+		],
+
+		"r": [
+			["b", "b", "b"],
+			["down", "sh", "lt"],
+			["sv", "b", "b"],
+			["up", "b", "b"],
+			["b", "b", "b"]
+		],
+
+		"s": [
+			["b", "b", "b"],
+			["down", "sh", "lt"],
+			["dr", "sh", "ul"],
+			["rt", "sh", "dl"],
+			["b", "b", "b"]
+		],
+
+		"t": [
+			["down", "b", "b"],
+			["t3r", "sh", "lt"],
+			["sv", "b", "b"],
+			["dr", "sh", "lt"],
+			["b", "b", "b"]
+		],
+
+		"u": [
+			["b", "b", "b"],
+			["down", "b", "down"],
+			["sv", "b", "sv"],
+			["dr", "sh", "dl"],
+			["b", "b", "b"]
+		],
+
+		"v": [
+			["b", "b", "b"],
+			["down", "b", "down"],
+			["sv", "b", "sv"],
+			["dr", "ul", "sv"],
+			["b", "dr", "dl"]
+		],
+
+		"w": [
+			["b", "b", "b", "b", "b"],
+			["down", "b", "b", "b", "down"],
+			["sv", "b", "down", "b", "sv"],
+			["sv", "b", "sv", "b", "sv"],
+			["dr", "sh", "t3t", "sh", "dl"]
+		],
+
+		"x": [
+			["b", "b", "b"],
+			["down", "b", "down"],
+			["dr", "t3b", "dl"],
+			["ur", "t3t", "ul"],
+			["up", "b", "up"]
+		],
+
+		"y": [
+			["b", "b", "b"],
+			["down", "b", "down"],
+			["sv", "b", "sv"],
+			["dr", "sh", "t3l"],
+			["rt", "sh", "dl"]
+		],
+
+		"z": [
+			["b", "b", "b"],
+			["rt", "sh", "ul"],
+			["down", "sh", "dl"],
+			["dr", "sh", "lt"],
+			["b", "b", "b"]
+		],
+
+		"0": [
+			["down", "sh", "ul"],
+			["sv", "b", "sv"],
+			["sv", "b", "sv"],
+			["sv", "b", "sv"],
+			["dr", "sh", "dl"]
+		],
+
+		"1": [
+			["rt", "ul"],
+			["b", "sv"],
+			["b", "sv"],
+			["b", "sv"],
+			["b", "up"]
+		],
+
+		"2": [
+			["rt", "sh", "ul"],
+			["down", "sh", "dl"],
+			["sv", "b", "b"],
+			["dr", "sh", "lt"],
+			["b", "b", "b"]
+		],
+
+		"3": [
+			["rt", "sh", "ul"],
+			["b", "b", "sv"],
+			["rt", "sh", "t3l"],
+			["b", "b", "sv"],
+			["rt", "sh", "dl"]
+		],
+
+		"4": [
+			["down", "b", "down"],
+			["sv", "b", "sv"],
+			["dr", "sh", "t3l"],
+			["b", "b", "sv"],
+			["b", "b", "up"]
+		],
+
+		"5": [
+			["down", "sh", "lt"],
+			["t3r", "sh", "ul"],
+			["b", "b", "sv"],
+			["rt", "sh", "dl"],
+			["b", "b", "b"]
+		],
+
+		"6": [
+			["down", "sh", "lt"],
+			["t3r", "sh", "ul"],
+			["sv", "b", "sv"],
+			["dr", "sh", "dl"],
+			["b", "b", "b"]
+		],
+
+		"7": [
+			["rt", "sh", "ul"],
+			["b", "b", "sv"],
+			["b", "b", "sv"],
+			["b", "b", "sv"],
+			["b", "b", "up"]
+		],
+
+		"8": [
+			["down", "sh", "ul"],
+			["t3r", "sh", "t3l"],
+			["sv", "b", "sv"],
+			["dr", "sh", "dl"],
+			["b", "b", "b"]
+		],
+
+		"9": [
+			["down", "sh", "ul"],
+			["sv", "b", "sv"],
+			["dr", "sh", "t3l"],
+			["rt", "sh", "dl"],
+			["b", "b", "b"]
+		],
+
+		"!": [["down"], ["sv"], ["up"], ["b"], ["face"]],
+
+		"?": [
+			["rt", "sh", "ul"],
+			["down", "sh", "dl"],
+			["up", "b", "b"],
+			["b", "b", "b"],
+			["face", "b", "b"]
+		],
+
+		".": [["b"], ["b"], ["b"], ["b"], ["face"]],
+
+		",": [["b"], ["b"], ["b"], ["down"], ["up"]],
+
+		":": [["b"], ["face"], ["b"], ["face"], ["b"]],
+
+		";": [["b"], ["face"], ["b"], ["down"], ["up"]],
+
+		"-": [
+			["b", "b", "b"],
+			["b", "b", "b"],
+			["rt", "sh", "lt"],
+			["b", "b", "b"],
+			["b", "b", "b"]
+		],
+
+		"\"": [["down"], ["up"], ["b"], ["b"], ["b"]],
+
+		" ": [
+			["b", "b"],
+			["b", "b"],
+			["b", "b"],
+			["b", "b"],
+			["b", "b"]
+		]
+	}
+}
