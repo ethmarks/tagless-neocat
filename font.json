@@ -1,5 +1,5 @@
 {
-	"READTHIS": {
+	"_READTHIS": {
 		"explanation": "because json doesn't allow comments for some dumb reason",
 		"source": "https://github.com/maxwofford/neocat/blob/main/font.go",
 		"note": "the original file is a Go map, but I ported it to a JSON object, which was more tedious than you'd think"
