@@ -390,15 +390,63 @@ const FONT = {
 	],
 };
 
+/** @type {Glyph} */
+const SEPARATOR = [b, b, b, b, b];
+
+/**
+ *
+ * @param {string} name
+ * @returns string
+ */
+function tile(name) {
+	return `:${name}:`;
+}
+
 /**
  *
  * based on {@link https://github.com/maxwofford/neocat/blob/main/main.go#L57-L82|buildGrid()}
  *
  * @param {string} text
- * @returns {string}
+ * @returns {[string[], string[], string[], string[], string[]]}
  */
-function text_to_emoji(text) {
-	for (const idx = 0; idx < text.length; idx++) {
-		const char = text.toLowerCase()[idx];
+function buildGrid(text) {
+	const chars = text.toLowerCase().split("");
+
+	const columns = chars.flatMap((char, idx) => {
+		let glyph = FONT[char];
+
+		// fallback for unknown characters not in the font
+		if (!glyph) glyph = SEPARATOR;
+
+		// add a separator, except for the first character
+		return idx === 0 ? [glyph] : [SEPARATOR, glyph];
+	});
+
+	/** @type {string[][]} */
+	let rows = [];
+	for (let i = 0; i < 5; i++) {
+		columns.forEach((tile) => {
+			rows[i] = tile;
+		});
 	}
+
+	return rows;
 }
+
+/**
+ *
+ * @param {string} text
+ */
+function render(text) {
+	const rows = buildGrid(text);
+
+	rows.forEach((row) => {
+		let sb = "";
+		for (const t of row) {
+			sb += tile(t);
+		}
+		console.log(sb);
+	});
+}
+
+render("ethan");
