@@ -12,15 +12,24 @@ document.adoptedStyleSheets = [sheet];
 const main = document.createElement("main");
 document.body.appendChild(main);
 
-const top = md(`
-# Tagless Neocat
+// constructing the header
+const header = document.createElement("header");
+main.appendChild(header);
+const titleText = "Tagless Neocat";
+// for accessibility :)
+const semanticTitle = document.createElement("h1");
+semanticTitle.appendChild(document.createTextNode(titleText));
+semanticTitle.classList.add("hide");
+header.appendChild(semanticTitle);
+// for coolness
+const titleEmoji = textToNeocat(titleText.replace(" ", "\n"));
+const displayTitle = neocatToEl(titleEmoji);
+displayTitle.ariaHidden = "true";
+header.appendChild(displayTitle);
 
+const desc = md(`
 > Convert text to Neocat stretch emojis for the Hack Club Slack
 
 This is a tool that converts normal text into \`:neocat-stretch:\` emojis that you can copy-paste into Slack!
 	`);
-main.appendChild(top);
-
-const display = neocatToEl(textToNeocat("tagless"));
-display.id = "display";
-main.appendChild(display);
+main.appendChild(desc);
