@@ -436,8 +436,36 @@ function buildGrid(text) {
  * @param {string} text
  * @returns {string}
  */
-export function render(text) {
+export function textToNeocat(text) {
 	return buildGrid(text)
 		.map((row) => row.map(tile).join(""))
 		.join("\n");
+}
+
+const emojiImgPath = (name) => `./emoji/${name}.png`;
+
+/**
+ * @param {string} emoji
+ * @returns {HTMLElement}
+ */
+export function neocatToEl(emoji) {
+	const line = document.createElement("div");
+	line.classList.add("line");
+
+	const rows = emoji.split("\n");
+	for (const row of rows) {
+		const rowEl = document.createElement("div");
+
+		const names = row.split(":").filter(Boolean);
+		for (const name of names) {
+			const img = document.createElement("img");
+			img.src = emojiImgPath(name);
+
+			rowEl.appendChild(img);
+		}
+
+		line.appendChild(rowEl);
+	}
+
+	return line;
 }
