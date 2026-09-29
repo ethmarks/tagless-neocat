@@ -1,5 +1,5 @@
 /**
- * @typedef {[string, string, string, string, string]} Glyph
+ * @typedef {[string[], string[], string[], string[], string[]]} Glyph
  */
 
 // based on https://github.com/maxwofford/neocat/blob/main/font.go#L5-L23
@@ -391,7 +391,7 @@ const FONT = {
 };
 
 /** @type {Glyph} */
-const SEPARATOR = [b, b, b, b, b];
+const SEPARATOR = [[b], [b], [b], [b], [b]];
 
 /**
  *
@@ -412,7 +412,7 @@ function tile(name) {
 function buildGrid(text) {
 	const chars = text.toLowerCase().split("");
 
-	const columns = chars.flatMap((char, idx) => {
+	const glyphs = chars.flatMap((char, idx) => {
 		let glyph = FONT[char];
 
 		// fallback for unknown characters not in the font
@@ -425,9 +425,7 @@ function buildGrid(text) {
 	/** @type {string[][]} */
 	let rows = [];
 	for (let i = 0; i < 5; i++) {
-		columns.forEach((tile) => {
-			rows[i] = tile;
-		});
+		rows[i] = glyphs.flatMap((glyph) => glyph[i]);
 	}
 
 	return rows;
@@ -436,17 +434,10 @@ function buildGrid(text) {
 /**
  *
  * @param {string} text
+ * @returns {string}
  */
-function render(text) {
-	const rows = buildGrid(text);
-
-	rows.forEach((row) => {
-		let sb = "";
-		for (const t of row) {
-			sb += tile(t);
-		}
-		console.log(sb);
-	});
+export function render(text) {
+	return buildGrid(text)
+		.map((row) => row.map(tile).join(""))
+		.join("\n");
 }
-
-render("ethan");
