@@ -87,6 +87,39 @@ outCopy.addEventListener("click", () => {
 	setTimeout(() => (outCopy.textContent = "Copy"), 1000);
 });
 
+const misc = document.createElement("section");
+main.appendChild(misc);
+misc.id = "misc";
+// glyph map
+const glyphMapLabel = document.createElement("label");
+misc.appendChild(glyphMapLabel);
+glyphMapLabel.textContent = "Glyph Map";
+const glyphMap = document.createElement("details");
+misc.appendChild(glyphMap);
+const glyphMapSummary = document.createElement("summary");
+glyphMap.appendChild(glyphMapSummary);
+glyphMapSummary.textContent = "Click to open";
+const allGlyphs = `
+abcdef
+ghijklm
+nopqrst
+uvwxyz
+12345
+67890
+!?.,:;-'
+`.trim();
+const glyphMapEmojis = textToNeocat(allGlyphs);
+glyphMap.appendChild(neocatToEl(glyphMapEmojis));
+const glyphMapCopy = document.createElement("button");
+glyphMap.appendChild(glyphMapCopy);
+glyphMapCopy.textContent = "Copy";
+glyphMapCopy.classList.add("copy");
+glyphMapCopy.addEventListener("click", () => {
+	glyphMapCopy.textContent = "Copied!";
+	navigator.clipboard.writeText(glyphMapEmojis);
+	setTimeout(() => (glyphMapCopy.textContent = "Copy"), 1000);
+});
+
 const closing = document.createElement("section");
 main.appendChild(closing);
 closing.id = "closing";
