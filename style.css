@@ -4,6 +4,14 @@ main {
 	padding: 1rem;
 }
 
+header {
+	padding: 1rem;
+	border-radius: 1rem;
+	outline: 5px double rgb(235, 153, 161);
+	background: hsl(336, 8%, 15%);
+	margin-bottom: 6rem;
+}
+
 .line {
 	display: flex;
 	flex-direction: column;
