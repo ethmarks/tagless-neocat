@@ -57,3 +57,23 @@ Tagless Neocat actually uses Tagless Markdown in a few places).
 [`index.html`](./index.html) is only a barebones shell whose entire job is to
 import [`page.js`](./page.js), which does all of the heavy lifting by
 manipulating the DOM using `.createElement()`.
+
+## Acknowledgements
+
+- Thanks to [Max Wofford](https://github.com/maxwofford) for making the
+  [Neocat CLI](https://github.com/maxwofford/neocat). It's written in Go, so I
+  had to manually transpile the glyph definition code from a Go map to a JS
+  record.
+- Thanks to [Volpeon](https://github.com/volpeon) for making
+  [the original Neocat emojis](https://volpeon.ink/emojis/neocat/), which I used
+  for the preview/render of the emojis. I sourced the emoji images from Max
+  Wofford's repo, but he didn't give attribution, so I'm not entirely sure where
+  he got them from. However, the original source is Volpeon, as far as I can
+  tell.
+- Thanks to [Mitesh](https://github.com/oxalorg) for making
+  [Sakura](https://oxal.org/projects/sakura/), which I used for the site styles.
+
+## License
+
+This project is under an MIT License. See [LICENSE](./LICENSE) for more
+information.
