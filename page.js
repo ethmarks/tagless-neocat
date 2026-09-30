@@ -1,4 +1,5 @@
-import sheet from "./style.css" with { type: "css" };
+import styleSheet from "./style.css" with { type: "css" };
+import sakuraSheet from "https://unpkg.com/sakura.css/css/sakura-vader.css" with { type: "css" };
 
 import { neocatToEl, textToNeocat } from "./neocat.js";
 
@@ -7,7 +8,7 @@ import { mdToEl } from "https://cdn.jsdelivr.net/gh/ethmarks/tagless-md/md.js";
 /** @type {(markdown: string) => HTMLElement} */
 const md = mdToEl;
 
-document.adoptedStyleSheets = [sheet];
+document.adoptedStyleSheets = [sakuraSheet, styleSheet];
 
 const main = document.createElement("main");
 document.body.appendChild(main);
