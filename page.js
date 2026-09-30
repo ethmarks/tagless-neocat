@@ -45,6 +45,29 @@ This is a tool that converts normal text into \`:neocat-stretch:\` emojis that y
 `);
 main.appendChild(desc);
 
+// input
+const inputLabel = document.createElement("label");
+main.appendChild(inputLabel);
+inputLabel.textContent = "Input";
+const textarea = document.createElement("textarea");
+main.appendChild(textarea);
+textarea.textContent = "hiya";
+textarea.rows = 3;
+// raw output
+const rawLabel = document.createElement("label");
+main.appendChild(rawLabel);
+rawLabel.textContent = "Emojis";
+const rawOut = document.createElement("pre");
+main.appendChild(rawOut);
+const rawOutInner = document.createElement("code");
+rawOut.appendChild(rawOutInner);
+// rendered output
+const renderedLabel = document.createElement("label");
+main.appendChild(renderedLabel);
+renderedLabel.textContent = "Rendered";
+const renderedOut = document.createElement("article");
+main.appendChild(renderedOut);
+
 const closing = md(`
 Check out my repo here: [ethmarks/tagless-neocat](https://github.com/ethmarks/tagless-neocat)
 
@@ -57,3 +80,14 @@ const footer = document.createElement("footer");
 footer.classList.add("text-center");
 footer.appendChild(md("By [Ethan Marks](https://github.com/ethmarks)"));
 main.appendChild(footer);
+
+// actual functionality part
+function update() {
+	const raw = textToNeocat(textarea.value);
+	rawOut.textContent = raw;
+
+	const el = neocatToEl(raw);
+	renderedOut.replaceChildren(el);
+}
+textarea.addEventListener("input", update);
+update();

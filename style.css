@@ -33,6 +33,10 @@ footer {
 	text-align: center;
 }
 
+pre {
+	max-height: 10em;
+}
+
 .neocat {
 	display: flex;
 	flex-direction: column;
