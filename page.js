@@ -75,6 +75,17 @@ const rawOut = document.createElement("pre");
 tool.appendChild(rawOut);
 const rawOutInner = document.createElement("code");
 rawOut.appendChild(rawOutInner);
+let emojiRaw = "";
+// once again, for convenience
+const outCopy = document.createElement("button");
+tool.appendChild(outCopy);
+outCopy.textContent = "Copy";
+outCopy.classList.add("copy");
+outCopy.addEventListener("click", () => {
+	outCopy.textContent = "Copied!";
+	navigator.clipboard.writeText(emojiRaw);
+	setTimeout(() => (outCopy.textContent = "Copy"), 1000);
+});
 
 const closing = document.createElement("section");
 main.appendChild(closing);
@@ -95,10 +106,10 @@ main.appendChild(footer);
 
 // actual functionality part
 function update() {
-	const raw = textToNeocat(textarea.value);
-	rawOut.textContent = raw;
+	emojiRaw = textToNeocat(textarea.value);
+	rawOut.textContent = emojiRaw;
 
-	const el = neocatToEl(raw);
+	const el = neocatToEl(emojiRaw);
 	renderedOut.replaceChildren(el);
 }
 textarea.addEventListener("input", update);

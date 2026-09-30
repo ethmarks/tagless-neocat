@@ -16,11 +16,8 @@ header .neocat {
 	background: hsl(336, 8%, 15%);
 }
 
-header button {
-	float: right;
-}
-
 button {
+	float: right;
 	margin-top: 0.5rem;
 	border-radius: 0.4rem;
 	transition: background 0.1s ease;
@@ -36,6 +33,7 @@ footer {
 
 pre {
 	max-height: 10em;
+	margin: 0;
 }
 
 .neocat {
@@ -54,7 +52,7 @@ pre {
 	flex: 1 1 0;
 	width: 0;
 	min-width: 0;
-	max-width: 48px;
+	max-width: 30px;
 	height: auto;
 	margin: 0;
 }
