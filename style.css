@@ -5,26 +5,43 @@ main {
 }
 
 header {
-	padding: 1rem;
-	border-radius: 1rem;
-	outline: 5px double rgb(235, 153, 161);
-	background: hsl(336, 8%, 15%);
 	margin-bottom: 6rem;
 }
 
-.line {
+header .neocat {
+	padding: 1rem;
+	border-radius: 1rem;
+	border: 5px double hsl(354, 67%, 76%);
+	background: hsl(336, 8%, 15%);
+}
+
+header button {
+	float: right;
+}
+
+button {
+	margin-top: 0.5rem;
+	border-radius: 0.4rem;
+	transition: background 0.1s ease;
+}
+
+button:hover {
+	background: hsl(354, 67%, 70%);
+}
+
+.neocat {
 	display: flex;
 	flex-direction: column;
 	max-width: 100%;
 }
-.line > div {
+.neocat > div {
 	display: flex;
 	flex-direction: row;
 	width: auto;
 	height: auto;
 	flex: 1;
 }
-.line > div > img {
+.neocat > div > img {
 	flex: 1 1 0;
 	width: 0;
 	min-width: 0;

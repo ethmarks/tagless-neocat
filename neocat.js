@@ -453,8 +453,8 @@ const emojiImgPath = (name) => `./emoji/${name}.png`;
  * @returns {HTMLElement}
  */
 export function neocatToEl(emoji) {
-	const line = document.createElement("div");
-	line.classList.add("line");
+	const emojiEl = document.createElement("div");
+	emojiEl.classList.add("neocat");
 
 	const rows = emoji.split("\n");
 	for (const row of rows) {
@@ -467,11 +467,16 @@ export function neocatToEl(emoji) {
 			img.alt = name;
 			img.title = `:${name}:`;
 
+			// I'm pretty sure that 22 pixels is the default for Slack emojis.
+			// This'll be overridden with CSS most of the time, anyways
+			img.width = 22;
+			img.height = 22;
+
 			rowEl.appendChild(img);
 		}
 
-		line.appendChild(rowEl);
+		emojiEl.appendChild(rowEl);
 	}
 
-	return line;
+	return emojiEl;
 }

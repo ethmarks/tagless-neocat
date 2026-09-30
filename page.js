@@ -17,16 +17,26 @@ document.body.appendChild(main);
 const header = document.createElement("header");
 main.appendChild(header);
 const titleText = "Tagless Neocat";
+const titleEmoji = textToNeocat(titleText.replace(" ", "\n"));
 // for accessibility :)
 const semanticTitle = document.createElement("h1");
-semanticTitle.appendChild(document.createTextNode(titleText));
-semanticTitle.classList.add("hide");
 header.appendChild(semanticTitle);
+semanticTitle.textContent = titleText;
+semanticTitle.classList.add("hide");
 // for coolness
-const titleEmoji = textToNeocat(titleText.replace(" ", "\n"));
 const displayTitle = neocatToEl(titleEmoji);
-displayTitle.ariaHidden = "true";
 header.appendChild(displayTitle);
+displayTitle.ariaHidden = "true";
+// for convenience
+const titleCopy = document.createElement("button");
+header.appendChild(titleCopy);
+titleCopy.textContent = "Copy";
+titleCopy.classList.add("copy");
+titleCopy.addEventListener("click", () => {
+	titleCopy.textContent = "Copied!";
+	navigator.clipboard.writeText(titleEmoji);
+	setTimeout(() => (titleCopy.textContent = "Copy"), 1000);
+});
 
 const desc = md(`
 > Convert text to Neocat stretch emojis for the Hack Club Slack
