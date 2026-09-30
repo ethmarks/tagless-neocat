@@ -38,42 +38,54 @@ titleCopy.addEventListener("click", () => {
 	setTimeout(() => (titleCopy.textContent = "Copy"), 1000);
 });
 
-const desc = md(`
+const desc = document.createElement("section");
+main.appendChild(desc);
+desc.id = "desc";
+desc.appendChild(
+	md(`
 > Convert text to Neocat stretch emojis for the Hack Club Slack
 
 This is a tool that converts normal text into \`:neocat-stretch:\` emojis that you can paste into Slack!
-`);
-main.appendChild(desc);
+`),
+);
 
+// tool section
+const tool = document.createElement("section");
+main.appendChild(tool);
+tool.id = "tool";
 // input
 const inputLabel = document.createElement("label");
-main.appendChild(inputLabel);
+tool.appendChild(inputLabel);
 inputLabel.textContent = "Input";
 const textarea = document.createElement("textarea");
-main.appendChild(textarea);
+tool.appendChild(textarea);
 textarea.textContent = "hiya";
 textarea.rows = 3;
-// raw output
-const rawLabel = document.createElement("label");
-main.appendChild(rawLabel);
-rawLabel.textContent = "Emojis";
-const rawOut = document.createElement("pre");
-main.appendChild(rawOut);
-const rawOutInner = document.createElement("code");
-rawOut.appendChild(rawOutInner);
 // rendered output
 const renderedLabel = document.createElement("label");
-main.appendChild(renderedLabel);
+tool.appendChild(renderedLabel);
 renderedLabel.textContent = "Rendered";
 const renderedOut = document.createElement("article");
-main.appendChild(renderedOut);
+tool.appendChild(renderedOut);
+// raw output
+const rawLabel = document.createElement("label");
+tool.appendChild(rawLabel);
+rawLabel.textContent = "Emojis";
+const rawOut = document.createElement("pre");
+tool.appendChild(rawOut);
+const rawOutInner = document.createElement("code");
+rawOut.appendChild(rawOutInner);
 
-const closing = md(`
+const closing = document.createElement("section");
+main.appendChild(closing);
+closing.id = "closing";
+closing.appendChild(
+	md(`
 Check out my repo here: [ethmarks/tagless-neocat](https://github.com/ethmarks/tagless-neocat)
 
 _Note: I sourced the emojis and font from [maxwofford/neocat](https://github.com/maxwofford/neocat), but I think the emojis originate from <https://volpeon.ink/emojis/neocat/>_
-`);
-main.appendChild(closing);
+`),
+);
 
 // footer
 const footer = document.createElement("footer");
