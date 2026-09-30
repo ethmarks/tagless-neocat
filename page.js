@@ -41,6 +41,19 @@ titleCopy.addEventListener("click", () => {
 const desc = md(`
 > Convert text to Neocat stretch emojis for the Hack Club Slack
 
-This is a tool that converts normal text into \`:neocat-stretch:\` emojis that you can copy-paste into Slack!
-	`);
+This is a tool that converts normal text into \`:neocat-stretch:\` emojis that you can paste into Slack!
+`);
 main.appendChild(desc);
+
+const closing = md(`
+Check out my repo here: [ethmarks/tagless-neocat](https://github.com/ethmarks/tagless-neocat)
+
+_Note: I sourced the emojis and font from [maxwofford/neocat](https://github.com/maxwofford/neocat), but I think the emojis originate from <https://volpeon.ink/emojis/neocat/>_
+`);
+main.appendChild(closing);
+
+// footer
+const footer = document.createElement("footer");
+footer.classList.add("text-center");
+footer.appendChild(md("By [Ethan Marks](https://github.com/ethmarks)"));
+main.appendChild(footer);

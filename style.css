@@ -29,6 +29,10 @@ button:hover {
 	background: hsl(354, 67%, 70%);
 }
 
+footer {
+	text-align: center;
+}
+
 .neocat {
 	display: flex;
 	flex-direction: column;
