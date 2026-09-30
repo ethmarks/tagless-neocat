@@ -45,7 +45,7 @@ desc.appendChild(
 	md(`
 > Convert text to Neocat stretch emojis for the Hack Club Slack
 
-This is a tool that converts normal text into \`:neocat-stretch:\` emojis that you can paste into Slack!
+This is a tool that converts normal text into \`:neocat_stretch:\` emojis that you can paste into Slack!
 `),
 );
 

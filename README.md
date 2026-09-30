@@ -2,7 +2,7 @@
 	<img src="./.github/demo.png" alt="Tagless Neocat" width="600"/>
 </h1>
 
-Tool to convert text to `:neocat-stretch:` emojis that you can use in the
+Tool to convert text to `:neocat_stretch:` emojis that you can use in the
 [Hack Club Slack](https://slack.hackclub.com/). Made for
 [Tagless](https://tagless.hackclub.com/).
 
